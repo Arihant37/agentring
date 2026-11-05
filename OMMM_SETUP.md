@@ -18,7 +18,9 @@
 | App on the vivo phone (Google Play) | owner | allow "display over lock screen", battery: no restrictions (docs/troubleshooting-oem.md) |
 | `claude mcp add agentring -- agentring mcp` | Claude | |
 
-## OMMM customisations (planned)
+## OMMM customisations (built, in ommm/)
+- ommm/ommm_alerts.py (run every 15 min), ommm/ommm_status.py (read-only status), ommm/agents.yaml, ommm/freellm_ask.py
+- Voice AI itself must be a realtime model: Gemini Live with the owner's AI Studio key (FreeLLMAPI is text-only; used as a consultable agent).
 - Call the owner when: an agy lane is stuck > 1 h, a YouTube token expires, uploads fail, QA fails twice, an approval waits > 12 h.
 - Message (not call) for: morning report, e-book/video batch finished.
 - Voice AI tools (read-only): `team_check.py` status, last 10 log lines, list approvals waiting.

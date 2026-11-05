@@ -1,0 +1,16 @@
+# Copy to ~/.agentring/agents.yaml. Agents the voice AI may consult during a call. READ-ONLY by design:
+# never give it upload / publish / delete commands (whoever holds the phone could trigger them).
+agents:
+  ommm:
+    description: OMMM agency status - what is stuck, e-books ready, approvals waiting, last team log lines. Read-only.
+    command: [python, "C:/Users/ariha/Downloads/_tools/agentring_review/agentring/ommm/ommm_status.py"]
+    timeout_s: 60
+  claude:
+    description: Claude Code in the OMMM project, plan mode (cannot edit files). Questions about the work.
+    command: [claude, -p, --permission-mode, plan, --, "{task}"]
+    cwd: C:/Users/ariha/Downloads/priya
+    timeout_s: 600
+  freellm:
+    description: Free LLM (FreeLLMAPI router on the laptop) for general questions; no file access.
+    command: [python, "C:/Users/ariha/Downloads/_tools/agentring_review/agentring/ommm/freellm_ask.py", "{task}"]
+    timeout_s: 120
